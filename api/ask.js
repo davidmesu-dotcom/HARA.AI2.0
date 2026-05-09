@@ -15,8 +15,14 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: [
-          { role: "system", content: "You are Hara, a smart AI assistant." },
-          { role: "user", content: message }
+          {
+            role: "system",
+            content: "You are Hara, a smart AI assistant."
+          },
+          {
+            role: "user",
+            content: message
+          }
         ]
       })
     });
@@ -28,6 +34,8 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    return res.status(500).json({ reply: "Server error" });
+    return res.status(500).json({
+      reply: "Server error"
+    });
   }
 }
